@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Add Property{% endblock title %}home
+{% block body %}
+<div class="container">
+    <div class="add-property-here">
+        <h2 class="text-center">Add Your Property Here</h2>
+    </div>
+    <form action="/add_property/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+        <div class="row">
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="property-title">Property Name</label>
+                <input type="text" required class="form-control" name="property_name" id="property-title">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="Property-Pic">Property Pic</label>
+                <input type="file"  required  class="form-control" name="property_pic" placeholder="select images" id="Property-Pic">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="bed-room">Bed Room</label>
+                <input type="number" required name="bedroom" class="form-control" id="bed-room">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="wash-room">Washroom</label>
+                <input type="number" required name="washroom" class="form-control" id="wash-room">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="sqft">Square Feet</label>
+                <input type="text" required name="square_feet" class="form-control" id="sqft">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text"required for="property-location">Property Location</label>
+                <input type="text" required name="Property_location" class="form-control" id="property-location">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="property-price">Property Price</label>
+                <input type="text" required name="Property_price" class="form-control" id="property-price">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="property-owner">Property Owner Name</label>
+                <input type="text" required name="owner_name" class="form-control" id="property-owner">
+              </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="owner-contact">Contact No</label>
+                <input type="text" required  name="contact_no" class="form-control" id="owner-contact">
+              </div>
+              <div class="text-center my-3">
+                <button type="submit" class="btn btn-primary">ADD NOW</button>
+              </div>
+
+        </div>
+    </form>
+</div>
+{% endblock body %}
